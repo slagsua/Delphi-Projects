@@ -1,0 +1,3 @@
+11.02.2007
+* Version 0.3.x realized as a port of ipfw2 (from RELENG_4). Tables and more flexible syntax now supported.
+  Don't use it on production! (beta release).
