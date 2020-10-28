@@ -4418,6 +4418,7 @@ object Form1: TForm1
       Width = 129
       Height = 25
       Caption = #1055#1080#1085#1075' '#1089#1077#1088#1074#1077#1088#1072
+      ModalResult = 1
       TabOrder = 0
       OnClick = Button12Click
     end
@@ -4504,23 +4505,6 @@ object Form1: TForm1
     Width = 608
     Height = 57
     TabOrder = 4
-    object Button21: TButton
-      Left = 16
-      Top = 9
-      Width = 577
-      Height = 41
-      Caption = #1042#1054#1047#1052#1054#1046#1053#1054#1057#1058#1048' '#1054#1043#1056#1040#1053#1048#1063#1045#1053#1067'! '#1050#1040#1050' '#1056#1045#1064#1048#1058#1068'?'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clRed
-      Font.Height = -19
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-      Visible = False
-      WordWrap = True
-      OnClick = Button21Click
-    end
     object Button19: TButton
       Left = 210
       Top = 9

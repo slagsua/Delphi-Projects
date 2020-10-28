@@ -34,8 +34,6 @@ type
     Button19: TButton;
     Button20: TButton;
     CheckBox1: TCheckBox;
-    Button21: TButton;
-    procedure Button21Click(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button20Click(Sender: TObject);
@@ -134,11 +132,6 @@ begin
   ShellExecute(0, nil, 'Data\Kill_explorer.bat', nil, nil, SW_SHOWNORMAL);
 end;
 
-procedure TForm1.Button21Click(Sender: TObject);
-begin
-  Form2.showModal;
-end;
-
 procedure TForm1.Button2Click(Sender: TObject);
 begin
   ShellExecute(0, nil, 'Data\DSP\Win7\Dispatcher.application', nil, nil, SW_SHOWNORMAL);
@@ -204,18 +197,20 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   if IsUserAnAdmin then
     begin
-      CheckBox1.Visible := true;
-      Button19.Visible := true;
-      Button21.Visible := false;
       ShellExecute(0, nil, 'Data\Kill_Disp.bat', nil, nil, SW_SHOWNORMAL);
-      Form1.Caption:='Sity 24 Конфигуратор V1.0.1           Запущено с правами администратора'
+      Form1.Caption:='Sity 24 Конфигуратор                 Запущено с правами администратора';
     end
       else
         begin
-          CheckBox1.Visible := false;
-          Button19.Visible := false;
-          Button21.Visible := true;
-          Form1.Caption:='Sity 24 Конфигуратор V1.0.1          ОГРАНИЧЕННЫЕ ВОЗМОЖНОСТИ!!!';
+                if Not Assigned(form2) then
+                  Application.CreateForm(Tform2,form2);
+                  try
+                    form2.ShowModal;
+                  finally
+                    form2.Free;
+                    form2:=nil;
+                  end;
+          Form1.Caption:='Sity 24 Конфигуратор                  ОГРАНИЧЕННЫЕ ВОЗМОЖНОСТИ!!!';
         end;
 
 end;
