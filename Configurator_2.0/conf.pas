@@ -202,14 +202,14 @@ begin
     end
       else
         begin
-                if Not Assigned(form2) then
-                  Application.CreateForm(Tform2,form2);
-                  try
-                    form2.ShowModal;
-                  finally
-                    form2.Free;
-                    form2:=nil;
-                  end;
+          if Not Assigned(form2) then
+            Application.CreateForm(Tform2,form2);
+            try
+              form2.ShowModal;
+            finally
+              form2.Free;
+              form2:=nil;
+            end;
           Form1.Caption:='Sity 24 Конфигуратор                  ОГРАНИЧЕННЫЕ ВОЗМОЖНОСТИ!!!';
         end;
 
