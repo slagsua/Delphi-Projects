@@ -1,0 +1,1 @@
+qtfw -style Platinum
